@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Sai Aarthi ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fce38a, #a8e6ff);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    display: none;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+.active {
+    display: block;
+}
+
+h1 {
+    font-size: 40px;
+    color: #003366;
+}
+
+p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: auto;
+    color: #333;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #003366;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#final h1 {
+    font-size: 50px;
+    color: #ff0066;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: 0;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="kanna.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<section class="active" id="page1">
+    <h1>Happy Birthday Sai Aarthi 💛</h1>
+    <p>March 16 – The day my favorite human was born ✨</p>
+    <button onclick="nextPage(2)">Start Your Surprise</button>
+</section>
+
+<!-- QUESTION 1 -->
+<section id="page2">
+    <h1>Do you like this surprise? 😌</h1>
+    <button onclick="nextPage(3)">Yes</button>
+    <button onclick="alert('Say Yes ilana headshot dha 😏')">No</button>
+</section>
+
+<!-- IMAGE 1 -->
+<section id="page3">
+    <h1>My Safe Place ❤️</h1>
+    <img src="img1.jpg">
+    <p>
+    From random mirror selfies to holding you close,
+    every small moment with you feels special.
+    You are not just part of my life...
+    you are my peace.
+    </p>
+    <button onclick="nextPage(4)">Next</button>
+</section>
+
+<!-- QUESTION 2 -->
+<section id="page4">
+    <h1>How are you feeling? 🥺</h1>
+    <p>Waiting for your response… share it with me after exploring this gift.</p>
+    <button onclick="nextPage(5)">Continue</button>
+</section>
+
+<!-- IMAGE 2 -->
+<section id="page5">
+    <h1>Walking With You Forever 🌆</h1>
+    <img src="img2.jpg">
+    <p>
+    No matter where life takes us,
+    I just want to walk beside you.
+    Laugh with you.
+    Grow with you.
+    Stay with you.
+    </p>
+    <button onclick="nextPage(6)">Next</button>
+</section>
+
+<!-- IMAGE 3 -->
+<section id="page6">
+    <h1>My Favorite Smile 😜</h1>
+    <img src="img3.jpg">
+    <p>
+    Your smile, your craziness,
+    your energy...
+    everything about you makes my world brighter.
+    </p>
+    <button onclick="nextPage(7)">Final Question</button>
+</section>
+
+<!-- FINAL QUESTION -->
+<section id="page7">
+    <h1>Will you stay with me forever, Sai Aarthi? ❤️</h1>
+    <button onclick="showFinal()">Yes</button>
+    <button onclick="showFinal()">Till I Die</button>
+</section>
+
+<!-- FINAL PAGE -->
+<section id="final">
+    <h1>HAPPY BIRTHDAY SAI AARTHI 🎉🎂</h1>
+    <p>
+    I am grateful for you every single day.
+    Thank you for being mine.
+    I love you more than words can explain.
+    </p>
+</section>
+
+<script>
+function nextPage(page) {
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById("page" + page).classList.add("active");
+}
+
+function showFinal() {
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById("final").classList.add("active");
+
+    for (let i = 0; i < 100; i++) {
+        let conf = document.createElement("div");
+        conf.classList.add("confetti");
+        conf.style.left = Math.random() * 100 + "vw";
+        conf.style.background = ["#ff0", "#00f", "#f06", "#0ff"][Math.floor(Math.random()*4)];
+        conf.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(conf);
+    }
+}
+</script>
+
+</body>
+</html>
