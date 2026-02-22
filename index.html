@@ -84,7 +84,12 @@ img {
 <audio id="bgmusic" loop>
   <source src="kanna.mp3" type="audio/mpeg">
 </audio>
-
+<script>
+    document.addEventListener("click", function () {
+        var music= document.getElementById("bgmusic");
+        music.play();
+    });
+</script>
 <!-- PAGE 1 -->
 <section class="active" id="page1">
     <h1>Happy Birthday Sai Aarthi 💛</h1>
@@ -186,3 +191,4 @@ function showFinal() {
 </body>
 
 </html>
+
